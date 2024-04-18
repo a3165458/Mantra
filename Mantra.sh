@@ -188,7 +188,6 @@ mantrachaind tx staking create-validator \
   --gas-adjustment 1.5 \
   --fees 50uom \
   --node $MANTRACHAIN_RPC_PORT
-  -y
 }
 
 
