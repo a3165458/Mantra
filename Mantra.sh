@@ -196,7 +196,7 @@ mantrachaind tx staking create-validator \
 function delegate_self_validator() {
 read -p "请输入质押代币数量: " math
 read -p "请输入钱包名称: " wallet_name
-mantrachaind tx staking delegate $(mantrachaind keys show $wallet_name --bech val -a)  ${math}om --from $wallet_name --gas=500000 --gas-prices=0.0002uom -y --node $MANTRACHAIN_RPC_PORT
+mantrachaind tx staking delegate $(mantrachaind keys show $wallet_name --bech val -a)  ${math}uom --from $wallet_name --gas=500000 --gas-prices=0.0002uom -y --node $MANTRACHAIN_RPC_PORT
 
 }
 
