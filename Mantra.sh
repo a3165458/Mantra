@@ -155,7 +155,7 @@ function import_wallet() {
 # 查询余额
 function check_balances() {
     read -p "请输入钱包地址: " wallet_address
-    mantrachaind query bank balances "$wallet_address" --node $node_address
+    mantrachaind query bank balances "$wallet_address" --node $MANTRACHAIN_RPC_PORT
 }
 
 # 查看节点同步状态
@@ -188,7 +188,7 @@ mantrachaind tx staking create-validator \
   --gas-adjustment 1.5 \
   --fees 50uom \
   -y
-  --node $node_address
+  --node $MANTRACHAIN_RPC_PORT
 }
 
 
@@ -196,7 +196,7 @@ mantrachaind tx staking create-validator \
 function delegate_self_validator() {
 read -p "请输入质押代币数量: " math
 read -p "请输入钱包名称: " wallet_name
-mantrachaind tx staking delegate $(mantrachaind keys show $wallet_name --bech val -a)  ${math}mantrachain --from $wallet_name --gas=500000 --gas-prices=99999amantrachain -y --node $node_address
+mantrachaind tx staking delegate $(mantrachaind keys show $wallet_name --bech val -a)  ${math}mantrachain --from $wallet_name --gas=500000 --gas-prices=99999amantrachain -y --node $MANTRACHAIN_RPC_PORT
 
 }
 
