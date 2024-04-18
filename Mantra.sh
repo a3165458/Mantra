@@ -143,13 +143,13 @@ function uninstall_node() {
 # 创建钱包
 function add_wallet() {
     read -p "请输入你想设置的钱包名称: " wallet_name
-    mantrachaind keys add $wallet_name --node $MANTRACHAIN_RPC_PORT
+    mantrachaind keys add $wallet_name
 }
 
 # 导入钱包
 function import_wallet() {
     read -p "请输入你想设置的钱包名称: " wallet_name
-    mantrachaind keys add $wallet_name --recover --node $MANTRACHAIN_RPC_PORT
+    mantrachaind keys add $wallet_name --recover
 }
 
 # 查询余额
